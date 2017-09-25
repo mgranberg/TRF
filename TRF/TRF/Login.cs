@@ -1,0 +1,63 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace TRF
+{
+    public partial class Login : Form
+    {
+        public Login()
+        {
+            InitializeComponent();
+        }
+
+        private void BtnNewUser_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            NewMember NM = new NewMember();
+            NM.ShowDialog();
+        }
+
+        private void BtnLogin_Click(object sender, EventArgs e)
+        {
+            string username = this.TxtLoginUserName.Text;
+            string pass = this.TxtLoginPass.Text;
+            if (username == "" && username == "")
+            {
+                MessageBox.Show("Du måste fylla i båda fälten för att logga in!");
+            }
+            else if (username == "")
+            {
+                MessageBox.Show("Du måste mata in ett användarnamn!");
+            }
+            else if (pass == "")
+            {
+                MessageBox.Show("Du måste mata in ett lösenord!");
+            }
+            else if (username.ToLower() == "admin" && pass == "Admin123")
+            {
+                MessageBox.Show("Du har loggat in som admin!");
+            }
+            else
+            {
+                MessageBox.Show("Du har loggat in som användare!");
+            }
+        }
+
+        private void Login_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void Login_KeyDown(object sender, KeyEventArgs e)
+        {
+            BtnLogin_Click(this, e);
+        }
+    }
+}
