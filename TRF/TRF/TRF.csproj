@@ -46,11 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminControl.Designer.cs">
+      <DependentUpon>AdminControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MemberControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MemberControl.Designer.cs">
+      <DependentUpon>MemberControl.cs</DependentUpon>
     </Compile>
     <Compile Include="NewMember.cs">
       <SubType>Form</SubType>
@@ -60,8 +72,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AdminControl.resx">
+      <DependentUpon>AdminControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemberControl.resx">
+      <DependentUpon>MemberControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewMember.resx">
       <DependentUpon>NewMember.cs</DependentUpon>

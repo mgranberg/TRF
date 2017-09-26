@@ -28,21 +28,24 @@ namespace TRF
         {
             string username = this.TxtLoginUserName.Text;
             string pass = this.TxtLoginPass.Text;
+
             if (username == "" && username == "")
             {
                 MessageBox.Show("Du måste fylla i båda fälten för att logga in!");
             }
-            else if (username == "")
+            else if (username == "" && pass != "")
             {
                 MessageBox.Show("Du måste mata in ett användarnamn!");
             }
-            else if (pass == "")
+            else if (pass == "" && username != "")
             {
                 MessageBox.Show("Du måste mata in ett lösenord!");
             }
             else if (username.ToLower() == "admin" && pass == "Admin123")
             {
-                MessageBox.Show("Du har loggat in som admin!");
+                this.Hide();
+                AdminControl admin = new AdminControl();
+                admin.ShowDialog();
             }
             else
             {
