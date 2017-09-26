@@ -71,6 +71,7 @@
             this.LstAdminMembers.Name = "LstAdminMembers";
             this.LstAdminMembers.Size = new System.Drawing.Size(72, 121);
             this.LstAdminMembers.TabIndex = 2;
+            this.LstAdminMembers.SelectedIndexChanged += new System.EventHandler(this.LstAdminMembers_SelectedIndexChanged);
             // 
             // LstAdminTigers
             // 
@@ -287,6 +288,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Administrationspanelen";
+            this.Load += new System.EventHandler(this.AdminControl_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
