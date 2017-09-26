@@ -24,7 +24,12 @@ namespace TRF
             NM.ShowDialog();
         }
 
-        private void BtnLogin_Click(object sender, EventArgs e)
+        public void BtnLogin_Click(object sender, EventArgs e)
+        {
+            LoginMethod();
+        }
+
+        private void LoginMethod()
         {
             string username = this.TxtLoginUserName.Text;
             string pass = this.TxtLoginPass.Text;
@@ -56,11 +61,6 @@ namespace TRF
         private void Login_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
-        }
-
-        private void Login_KeyDown(object sender, KeyEventArgs e)
-        {
-            BtnLogin_Click(this, e);
         }
     }
 }

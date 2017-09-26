@@ -15,10 +15,7 @@ namespace TRF
     public partial class AdminControl : Form
     {
         string connectionString;
-
-        SqlConnection connection;
-
-
+        
         public AdminControl()
         {
             InitializeComponent();
@@ -41,27 +38,72 @@ namespace TRF
         }
         private void ListMembers()
         {
-            using (connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(connectionString))
             using (SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Members", connection))
             {
-                DataTable MemberTable = new DataTable();
-                adapter.Fill(MemberTable);
-
+                DataTable datatable = new DataTable();
+                adapter.Fill(datatable);
+                
                 LstAdminMembers.DisplayMember = "FirstName";
                 LstAdminMembers.ValueMember = "Id";
-                LstAdminMembers.DataSource = MemberTable;
-
-                
-
+                LstAdminMembers.DataSource = datatable;
 
             }
-            
-            
+        }
+
+        private void ShowMemberInfo(int Id)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Members", connection))
+            {
+                DataTable datatable = new DataTable();
+                adapter.Fill(datatable);
+
+                DataRow datarow = datatable.Rows[Id];
+                TxtAdminMemberFirstName.Text = datarow[1].ToString();
+                TxtAdminMemberLastName.Text = datarow[2].ToString();
+                TxtAdminMemberAddress.Text = datarow[3].ToString();
+                TxtAdminMemberEmail.Text = datarow[4].ToString();
+                TxtAdminMemberUserName.Text = datarow[5].ToString();
+                TxtAdminMemberPass.Text = datarow[6].ToString();
+
+            }
+        }
+
+        private void ListTigers()
+        {
+            string query = "SELECT * FROM Tigers, Members WHERE @Member=OwnerId";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlCommand command = new SqlCommand(query, connection))
+            using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+            {
+                command.Parameters.AddWithValue("@Member", LstAdminMembers.SelectedValue);
+
+                //connection.Open();
+                
+                DataTable Tigertable = new DataTable();
+                adapter.Fill(Tigertable);
+
+                LstAdminTigers.DisplayMember = "TigerName";
+                LstAdminTigers.ValueMember = "Id";
+                LstAdminTigers.DataSource = Tigertable;
+
+            }
         }
 
         private void LstAdminMembers_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TxtAdminMemberFirstName.Text = LstAdminMembers.
+            int MemberId = LstAdminMembers.SelectedIndex;
+            ShowMemberInfo(MemberId);
+            ListTigers();
+            
+
+        }
+
+        private void AdminControl_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

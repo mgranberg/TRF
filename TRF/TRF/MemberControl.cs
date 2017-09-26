@@ -16,5 +16,10 @@ namespace TRF
         {
             InitializeComponent();
         }
+
+        private void MemberControl_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

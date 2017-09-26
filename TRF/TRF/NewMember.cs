@@ -23,5 +23,10 @@ namespace TRF
             Login login = new Login();
             login.ShowDialog();
         }
+
+        private void NewMember_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

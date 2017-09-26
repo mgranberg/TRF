@@ -140,10 +140,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="TRFMembers.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="TRFMembers_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>TRFMembers.mdf</DependentUpon>
     </Content>
   </ItemGroup>

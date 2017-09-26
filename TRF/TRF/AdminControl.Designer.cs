@@ -288,6 +288,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Administrationspanelen";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AdminControl_FormClosed);
             this.Load += new System.EventHandler(this.AdminControl_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

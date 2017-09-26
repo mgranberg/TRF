@@ -199,6 +199,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Medlemsregistrering";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NewMember_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

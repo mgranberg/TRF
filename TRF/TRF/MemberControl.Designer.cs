@@ -234,6 +234,7 @@
             this.Controls.Add(this.LblAdminTitle);
             this.Name = "MemberControl";
             this.Text = "MemberControl";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MemberControl_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
