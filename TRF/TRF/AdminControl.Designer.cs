@@ -80,6 +80,7 @@
             this.LstAdminTigers.Name = "LstAdminTigers";
             this.LstAdminTigers.Size = new System.Drawing.Size(72, 121);
             this.LstAdminTigers.TabIndex = 3;
+            this.LstAdminTigers.SelectedIndexChanged += new System.EventHandler(this.LstAdminTigers_SelectedIndexChanged);
             // 
             // LblAdminMembers
             // 
@@ -214,11 +215,11 @@
             // LblAdminTigerAge
             // 
             this.LblAdminTigerAge.AutoSize = true;
-            this.LblAdminTigerAge.Location = new System.Drawing.Point(126, 249);
+            this.LblAdminTigerAge.Location = new System.Drawing.Point(143, 249);
             this.LblAdminTigerAge.Name = "LblAdminTigerAge";
-            this.LblAdminTigerAge.Size = new System.Drawing.Size(48, 13);
+            this.LblAdminTigerAge.Size = new System.Drawing.Size(31, 13);
             this.LblAdminTigerAge.TabIndex = 21;
-            this.LblAdminTigerAge.Text = "Förnamn";
+            this.LblAdminTigerAge.Text = "Ålder";
             // 
             // TxtAdminTigerAge
             // 
@@ -232,9 +233,9 @@
             this.LblAdminTigerSpecies.AutoSize = true;
             this.LblAdminTigerSpecies.Location = new System.Drawing.Point(126, 275);
             this.LblAdminTigerSpecies.Name = "LblAdminTigerSpecies";
-            this.LblAdminTigerSpecies.Size = new System.Drawing.Size(48, 13);
+            this.LblAdminTigerSpecies.Size = new System.Drawing.Size(51, 13);
             this.LblAdminTigerSpecies.TabIndex = 23;
-            this.LblAdminTigerSpecies.Text = "Underart";
+            this.LblAdminTigerSpecies.Text = " Underart";
             // 
             // TxtAdminTigerSpecies
             // 

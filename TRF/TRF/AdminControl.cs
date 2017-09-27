@@ -70,9 +70,31 @@ namespace TRF
             }
         }
 
+        private void ShowTigerInfo(int Id)
+        {
+            string query = "SELECT * FROM Tigers WHERE @Member=OwnerId";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlCommand command = new SqlCommand(query, connection))
+            using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+            {
+                command.Parameters.AddWithValue("@Member", LstAdminMembers.SelectedValue);
+
+
+                DataTable datatable = new DataTable();
+                adapter.Fill(datatable);
+
+                DataRow datarow = datatable.Rows[Id];
+                TxtAdminTigerName.Text = datarow[2].ToString();
+                TxtAdminTigerAge.Text = datarow[3].ToString();
+                TxtAdminTigerSpecies.Text = datarow[4].ToString();
+
+            }
+        }
+
         private void ListTigers()
         {
-            string query = "SELECT * FROM Tigers, Members WHERE @Member=OwnerId";
+            string query = "SELECT * FROM Tigers WHERE @Member=OwnerId";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             using (SqlCommand command = new SqlCommand(query, connection))
@@ -97,8 +119,15 @@ namespace TRF
             int MemberId = LstAdminMembers.SelectedIndex;
             ShowMemberInfo(MemberId);
             ListTigers();
-            
 
+        }
+
+        
+
+        private void LstAdminTigers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int TigerId = LstAdminTigers.SelectedIndex;
+            ShowTigerInfo(TigerId);
         }
 
         private void AdminControl_FormClosed(object sender, FormClosedEventArgs e)
