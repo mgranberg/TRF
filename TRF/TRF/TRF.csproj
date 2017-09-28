@@ -62,6 +62,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminAddMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminAddMember.Designer.cs">
+      <DependentUpon>AdminAddMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminAddTiger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminAddTiger.Designer.cs">
+      <DependentUpon>AdminAddTiger.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminControl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +105,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TRFMembersDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AdminAddMember.resx">
+      <DependentUpon>AdminAddMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminAddTiger.resx">
+      <DependentUpon>AdminAddTiger.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminControl.resx">
       <DependentUpon>AdminControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -136,7 +154,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="TRFMembers.mdf">
