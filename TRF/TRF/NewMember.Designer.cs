@@ -161,6 +161,7 @@
             this.BtnNewAdd.TabIndex = 16;
             this.BtnNewAdd.Text = "Registrera!";
             this.BtnNewAdd.UseVisualStyleBackColor = true;
+            this.BtnNewAdd.Click += new System.EventHandler(this.BtnNewAdd_Click);
             // 
             // BtnNewAbort
             // 
