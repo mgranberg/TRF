@@ -152,6 +152,7 @@
             this.Controls.Add(this.LblAdminAddTiger);
             this.Name = "AdminAddTiger";
             this.Text = "AdminAddTiger";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AdminAddTiger_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

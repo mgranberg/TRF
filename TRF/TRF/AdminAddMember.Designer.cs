@@ -169,6 +169,7 @@
             this.BtnAdminAbort.TabIndex = 21;
             this.BtnAdminAbort.Text = "Avbryt";
             this.BtnAdminAbort.UseVisualStyleBackColor = true;
+            this.BtnAdminAbort.Click += new System.EventHandler(this.BtnAdminAbort_Click);
             // 
             // AdminAddMember
             // 
@@ -193,6 +194,7 @@
             this.Name = "AdminAddMember";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminAddMember";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AdminAddMember_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
