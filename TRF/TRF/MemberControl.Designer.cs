@@ -49,6 +49,7 @@
             this.LblMemberAddTiger = new System.Windows.Forms.Label();
             this.BtnUpdateTiger = new System.Windows.Forms.Button();
             this.BtnMemberLogout = new System.Windows.Forms.Button();
+            this.WikiLink = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // LblAdminTitle
@@ -233,11 +234,24 @@
             this.BtnMemberLogout.UseVisualStyleBackColor = true;
             this.BtnMemberLogout.Click += new System.EventHandler(this.BtnMemberLogout_Click);
             // 
+            // WikiLink
+            // 
+            this.WikiLink.AutoSize = true;
+            this.WikiLink.LinkColor = System.Drawing.Color.Black;
+            this.WikiLink.Location = new System.Drawing.Point(12, 283);
+            this.WikiLink.Name = "WikiLink";
+            this.WikiLink.Size = new System.Drawing.Size(123, 13);
+            this.WikiLink.TabIndex = 42;
+            this.WikiLink.TabStop = true;
+            this.WikiLink.Text = "Lär dig mer om tigrar här!";
+            this.WikiLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.WikiLink_LinkClicked);
+            // 
             // MemberControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(549, 390);
+            this.ClientSize = new System.Drawing.Size(549, 305);
+            this.Controls.Add(this.WikiLink);
             this.Controls.Add(this.BtnMemberLogout);
             this.Controls.Add(this.BtnUpdateTiger);
             this.Controls.Add(this.LblMemberAddTiger);
@@ -292,5 +306,6 @@
         private System.Windows.Forms.Label LblMemberAddTiger;
         private System.Windows.Forms.Button BtnUpdateTiger;
         private System.Windows.Forms.Button BtnMemberLogout;
+        private System.Windows.Forms.LinkLabel WikiLink;
     }
 }

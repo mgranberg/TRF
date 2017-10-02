@@ -39,6 +39,7 @@
             this.LblAdminAddTiger = new System.Windows.Forms.Label();
             this.LblAdminAddOwnerId = new System.Windows.Forms.Label();
             this.TxtAdminAddOwnerId = new System.Windows.Forms.TextBox();
+            this.WikiLink = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // BtnAdminAbort
@@ -134,11 +135,24 @@
             this.TxtAdminAddOwnerId.Size = new System.Drawing.Size(199, 20);
             this.TxtAdminAddOwnerId.TabIndex = 34;
             // 
+            // WikiLink
+            // 
+            this.WikiLink.AutoSize = true;
+            this.WikiLink.LinkColor = System.Drawing.Color.Black;
+            this.WikiLink.Location = new System.Drawing.Point(12, 336);
+            this.WikiLink.Name = "WikiLink";
+            this.WikiLink.Size = new System.Drawing.Size(123, 13);
+            this.WikiLink.TabIndex = 39;
+            this.WikiLink.TabStop = true;
+            this.WikiLink.Text = "Lär dig mer om tigrar här!";
+            this.WikiLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.WikiLink_LinkClicked);
+            // 
             // AdminAddTiger
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(289, 305);
+            this.ClientSize = new System.Drawing.Size(289, 358);
+            this.Controls.Add(this.WikiLink);
             this.Controls.Add(this.LblAdminAddOwnerId);
             this.Controls.Add(this.TxtAdminAddOwnerId);
             this.Controls.Add(this.BtnAdminAbort);
@@ -171,5 +185,6 @@
         private System.Windows.Forms.Label LblAdminAddTiger;
         private System.Windows.Forms.Label LblAdminAddOwnerId;
         private System.Windows.Forms.TextBox TxtAdminAddOwnerId;
+        private System.Windows.Forms.LinkLabel WikiLink;
     }
 }

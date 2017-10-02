@@ -224,5 +224,10 @@ namespace TRF
             Login login = new Login();
             login.ShowDialog();
         }
+
+        private void WikiLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://sv.wikipedia.org/wiki/Tiger");
+        }
     }
 }

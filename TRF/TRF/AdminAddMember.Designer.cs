@@ -43,6 +43,7 @@
             this.TxtAdminAddPass = new System.Windows.Forms.TextBox();
             this.BtnAdminRegister = new System.Windows.Forms.Button();
             this.BtnAdminAbort = new System.Windows.Forms.Button();
+            this.WikiLink = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // LblAdminAddMember
@@ -171,11 +172,24 @@
             this.BtnAdminAbort.UseVisualStyleBackColor = true;
             this.BtnAdminAbort.Click += new System.EventHandler(this.BtnAdminAbort_Click);
             // 
+            // WikiLink
+            // 
+            this.WikiLink.AutoSize = true;
+            this.WikiLink.LinkColor = System.Drawing.Color.Black;
+            this.WikiLink.Location = new System.Drawing.Point(12, 419);
+            this.WikiLink.Name = "WikiLink";
+            this.WikiLink.Size = new System.Drawing.Size(123, 13);
+            this.WikiLink.TabIndex = 22;
+            this.WikiLink.TabStop = true;
+            this.WikiLink.Text = "Lär dig mer om tigrar här!";
+            this.WikiLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.WikiLink_LinkClicked);
+            // 
             // AdminAddMember
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(295, 417);
+            this.ClientSize = new System.Drawing.Size(295, 441);
+            this.Controls.Add(this.WikiLink);
             this.Controls.Add(this.BtnAdminAbort);
             this.Controls.Add(this.BtnAdminRegister);
             this.Controls.Add(this.LblAdminAddPass);
@@ -217,5 +231,6 @@
         private System.Windows.Forms.TextBox TxtAdminAddPass;
         private System.Windows.Forms.Button BtnAdminRegister;
         private System.Windows.Forms.Button BtnAdminAbort;
+        private System.Windows.Forms.LinkLabel WikiLink;
     }
 }

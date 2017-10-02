@@ -75,5 +75,10 @@ namespace TRF
         {
             Application.Exit();
         }
+
+        private void WikiLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://sv.wikipedia.org/wiki/Tiger");
+        }
     }
 }

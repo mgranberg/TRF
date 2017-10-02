@@ -44,6 +44,7 @@
             this.LblNewPass = new System.Windows.Forms.Label();
             this.BtnNewAdd = new System.Windows.Forms.Button();
             this.BtnNewAbort = new System.Windows.Forms.Button();
+            this.WikiLink = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // label1
@@ -173,11 +174,24 @@
             this.BtnNewAbort.UseVisualStyleBackColor = true;
             this.BtnNewAbort.Click += new System.EventHandler(this.BtnNewAbort_Click);
             // 
+            // WikiLink
+            // 
+            this.WikiLink.AutoSize = true;
+            this.WikiLink.LinkColor = System.Drawing.Color.Black;
+            this.WikiLink.Location = new System.Drawing.Point(12, 359);
+            this.WikiLink.Name = "WikiLink";
+            this.WikiLink.Size = new System.Drawing.Size(123, 13);
+            this.WikiLink.TabIndex = 18;
+            this.WikiLink.TabStop = true;
+            this.WikiLink.Text = "Lär dig mer om tigrar här!";
+            this.WikiLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.WikiLink_LinkClicked);
+            // 
             // NewMember
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(314, 381);
+            this.Controls.Add(this.WikiLink);
             this.Controls.Add(this.BtnNewAbort);
             this.Controls.Add(this.BtnNewAdd);
             this.Controls.Add(this.LblNewPass);
@@ -223,5 +237,6 @@
         private System.Windows.Forms.Label LblNewPass;
         private System.Windows.Forms.Button BtnNewAdd;
         private System.Windows.Forms.Button BtnNewAbort;
+        private System.Windows.Forms.LinkLabel WikiLink;
     }
 }

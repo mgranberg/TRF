@@ -60,6 +60,7 @@
             this.BtnAdminEditTiger = new System.Windows.Forms.Button();
             this.BtnAdminRemoveMember = new System.Windows.Forms.Button();
             this.BtnAdminRemoveTiger = new System.Windows.Forms.Button();
+            this.WikiLink = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // LblAdminTitle
@@ -339,11 +340,24 @@
             this.BtnAdminRemoveTiger.UseVisualStyleBackColor = true;
             this.BtnAdminRemoveTiger.Click += new System.EventHandler(this.BtnAdminRemoveTiger_Click);
             // 
+            // WikiLink
+            // 
+            this.WikiLink.AutoSize = true;
+            this.WikiLink.LinkColor = System.Drawing.Color.Black;
+            this.WikiLink.Location = new System.Drawing.Point(12, 368);
+            this.WikiLink.Name = "WikiLink";
+            this.WikiLink.Size = new System.Drawing.Size(123, 13);
+            this.WikiLink.TabIndex = 33;
+            this.WikiLink.TabStop = true;
+            this.WikiLink.Text = "Lär dig mer om tigrar här!";
+            this.WikiLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.WikiLink_LinkClicked);
+            // 
             // AdminControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(767, 390);
+            this.Controls.Add(this.WikiLink);
             this.Controls.Add(this.BtnAdminRemoveTiger);
             this.Controls.Add(this.BtnAdminRemoveMember);
             this.Controls.Add(this.BtnAdminEditTiger);
@@ -423,5 +437,6 @@
         public System.Windows.Forms.ListBox LstAdminMembers;
         private System.Windows.Forms.Button BtnAdminRemoveMember;
         private System.Windows.Forms.Button BtnAdminRemoveTiger;
+        private System.Windows.Forms.LinkLabel WikiLink;
     }
 }
