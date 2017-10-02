@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace TRF
 {
@@ -65,6 +66,7 @@ namespace TRF
                 //Om alla fälten är ifyllda
                 else
                 {
+
                     //Skickas variablarna in i sql kommandot.
                     command.Parameters.AddWithValue("@FirstName", FName);
                     command.Parameters.AddWithValue("@LastName", LName);
@@ -75,7 +77,17 @@ namespace TRF
 
                     command.ExecuteScalar();
 
-                    MessageBox.Show("Medlem registrerad! \n Du kan nu logga in.");
+                    //Skapar en ny streamwriter, denna class skapar en ny textfil på din dator.
+                    TextWriter txt = new StreamWriter("InloggningsuppgifterTRF.txt");
+
+                    //Här fyller jag textfilen med innehåll
+                    txt.WriteLine("Ditt Användarnamn: " + UName);
+                    txt.WriteLine("Ditt lösen: " + Pass);
+                    //Här stänger jag skapandet av textfilen och den sparas med innehåll på datorn.
+                    txt.Close();
+
+                    MessageBox.Show("Medlem registrerad! \n Du kan nu logga in. \n En textfil har också sparats på din dator med inloggningsuppgifterna!");
+
 
                     //När allt är klart så döljs fönstret
                     this.Hide();
